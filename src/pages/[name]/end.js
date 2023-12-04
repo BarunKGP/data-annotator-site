@@ -50,7 +50,10 @@ function End() {
                 {user.logs.map((log, i) => {
                   console.log(log);
                   return (
-                    <div className="flex justify-center gap-4 align-middle">
+                    <div
+                      key={i}
+                      className="flex justify-center gap-4 align-middle"
+                    >
                       <div className="text-stone-400 text-xl font-light">
                         {i + 1}
                       </div>
