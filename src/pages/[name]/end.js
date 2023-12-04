@@ -24,10 +24,11 @@ function End() {
     link.click();
   };
 
+  const displayName = user.name.charAt(0).toUpperCase() + user.name.slice(1);
   return (
     <div className="mt-20 grid grid-cols-1 gap-5 sm:w-screen w-[700px] mx-auto p-4 text-center">
       <h2 className="text-stone-300 text-3xl">
-        {`Thank you for your participation, ${user.name}!`}
+        {`Thank you for your participation, ${displayName}!`}
       </h2>
       <p className="text-stone-400 text-xl">
         Your data has been recorded. You can choose to view or download it.
