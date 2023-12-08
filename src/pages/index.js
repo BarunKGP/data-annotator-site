@@ -78,7 +78,7 @@ export default function Home() {
           {/* <Selector /> */}
           <input
             className="w-full rounded-lg min-h-[30px] text-gray-900 text-lg p-2"
-            type="number"
+            type="text"
             name="test"
             placeholder="Test number"
             onChange={(e) => setTest(e.target.value)}

@@ -3,7 +3,7 @@ import { useStore, create } from "zustand";
 export const useParticipantStore = create((set) => ({
   name: "",
   email: "",
-  test: -1,
+  test: "",
   subtest: -1,
   logs: [],
   setName: (name) => {
