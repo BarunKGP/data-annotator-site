@@ -1,6 +1,33 @@
 import { useParticipantStore } from "@/store/participantStore";
 import { useRouter } from "next/router";
 import { useState } from "react";
+// import {
+//   Select,
+//   SelectContent,
+//   SelectItem,
+//   SelectTrigger,
+//   SelectValue,
+// } from "@/components/ui/select";
+
+// function Selector() {
+//   return (
+//     <Select>
+//       <SelectTrigger className="w-[180px]">
+//         <SelectValue placeholder="Select a fruit" />
+//       </SelectTrigger>
+//       <SelectContent>
+//         <SelectGroup>
+//           <SelectLabel>Fruits</SelectLabel>
+//           <SelectItem value="apple">Apple</SelectItem>
+//           <SelectItem value="banana">Banana</SelectItem>
+//           <SelectItem value="blueberry">Blueberry</SelectItem>
+//           <SelectItem value="grapes">Grapes</SelectItem>
+//           <SelectItem value="pineapple">Pineapple</SelectItem>
+//         </SelectGroup>
+//       </SelectContent>
+//     </Select>
+//   );
+// }
 
 export default function Home() {
   const router = useRouter();
@@ -46,6 +73,15 @@ export default function Home() {
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
           />
+          {/* <label className="text-lg text-stone-300">Enter Test number: </label>
+          <Selector />
+          <input
+            className="w-full rounded-lg min-h-[30px] text-gray-900 text-lg p-2"
+            type="email"
+            name="email"
+            placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
+          /> */}
         </div>
       </form>
       <div className="w-full flex justify-end">

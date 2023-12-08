@@ -3,6 +3,8 @@ import { useStore, create } from "zustand";
 export const useParticipantStore = create((set) => ({
   name: "",
   email: "",
+  test: -1,
+  subtest: -1,
   logs: [],
   setName: (name) => {
     const nameWords = name.trim().split(" ");
@@ -11,4 +13,6 @@ export const useParticipantStore = create((set) => ({
   },
   setEmail: (email) => set({ email: email }),
   setLogs: (logs) => set({ logs: logs }),
+  setTest: (test) => set({ test: test }),
+  setSubTest: (subtest) => set({ subtest: subtest }),
 }));

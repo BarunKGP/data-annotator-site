@@ -1,6 +1,7 @@
 import TwoButtons from "@/components/TwoButtons";
 import React, { useState } from "react";
 import { useParticipantStore } from "@/store/participantStore";
+import send from "../api/send";
 
 function End() {
   const user = useParticipantStore((state) => ({
@@ -22,6 +23,16 @@ function End() {
     link.href = URL.createObjectURL(blob);
     link.download = "user_logs.json";
     link.click();
+  };
+
+  const handleEmailClick = () => {
+    fetch("/api/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    });
   };
 
   const displayName = user.name.charAt(0).toUpperCase() + user.name.slice(1);
@@ -65,12 +76,20 @@ function End() {
                   );
                 })}
               </div>
-              <button
-                className="bg-green-700 w-1/3 py-2 text-lg text-stone-300 rounded-md"
-                onClick={handleDownloadClick}
-              >
-                Download
-              </button>
+              <div className="flex justify-center gap-5">
+                <button
+                  className="bg-green-700 p-3 text-lg text-stone-300 rounded-md"
+                  onClick={handleDownloadClick}
+                >
+                  Download
+                </button>
+                <button
+                  className="bg-blue-500  p-3 text-lg text-stone-300 rounded-md"
+                  onClick={handleEmailClick}
+                >
+                  Email logs
+                </button>
+              </div>
             </div>
           )
         )}
