@@ -8,6 +8,7 @@ function End() {
     name: state.name,
     email: state.email,
     logs: state.logs,
+    test: state.test,
   }));
   const [view, setView] = useState(false);
 
@@ -21,7 +22,7 @@ function End() {
     const blob = new Blob([data], { type: "application/json" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
-    link.download = "user_logs.json";
+    link.download = `${user.name}_${user.test}.json`;
     link.click();
   };
 
@@ -83,12 +84,12 @@ function End() {
                 >
                   Download
                 </button>
-                <button
+                {/* <button
                   className="bg-blue-500  p-3 text-lg text-stone-300 rounded-md"
                   onClick={handleEmailClick}
                 >
                   Email logs
-                </button>
+                </button> */}
               </div>
             </div>
           )
