@@ -32,9 +32,10 @@ import { useState } from "react";
 export default function Home() {
   const router = useRouter();
   const [nameEntry, setNameEntry] = useState("");
-  const [setName, setEmail] = useParticipantStore((state) => [
+  const [setName, setEmail, setTest] = useParticipantStore((state) => [
     state.setName,
     state.setEmail,
+    state.setTest,
   ]);
 
   const handleSubmit = () => {
@@ -73,15 +74,15 @@ export default function Home() {
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
           />
-          {/* <label className="text-lg text-stone-300">Enter Test number: </label>
-          <Selector />
+          <label className="text-lg text-stone-300">Enter Test number: </label>
+          {/* <Selector /> */}
           <input
             className="w-full rounded-lg min-h-[30px] text-gray-900 text-lg p-2"
-            type="email"
-            name="email"
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-          /> */}
+            type="number"
+            name="test"
+            placeholder="Test number"
+            onChange={(e) => setTest(e.target.value)}
+          />
         </div>
       </form>
       <div className="w-full flex justify-end">

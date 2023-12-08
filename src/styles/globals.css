@@ -17,7 +17,8 @@
 }
 
 body {
-  background-image: linear-gradient(to right, #434343 0%, black 100%);
+  background-color: rgba(0, 0, 0, 0.8);
+  /* background-image: linear-gradient(to right, #434343 0%, black 100%); */
   /* Original Next.js background */
   /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(
